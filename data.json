@@ -1,0 +1,96 @@
+[
+  {
+    "email": "deep@gmail.com",
+    "fullname": "Deepinder",
+    "password": "12345678",
+    "confirm-password": "12345678",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Bathinda",
+    "pincode": "151001",
+    "job": "marketer"
+  },
+  {
+    "email": "bhavishya@gmail.com",
+    "fullname": "Bhavishya",
+    "password": "12345678",
+    "confirm-password": "12345678",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Bathinda",
+    "pincode": "151001",
+    "job": "developer"
+  },
+  {
+    "email": "bhavishyagarg2601@gmail.com",
+    "fullname": "Bhavishya",
+    "password": "hello",
+    "confirm-password": "hello",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Rajpura",
+    "pincode": "111111",
+    "job": "developer"
+  },
+  {
+    "email": "bidout2024@gmail.com",
+    "fullname": "Bhavishya",
+    "password": "1234",
+    "confirm-password": "1234",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Rajpura",
+    "pincode": "111111",
+    "job": "manager"
+  },
+  {
+    "email": "bidout2024@gmail.com",
+    "fullname": "Bhavishya wefwf",
+    "password": "123456789",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Rajpura",
+    "pincode": "111111",
+    "job": "sales"
+  },
+  {
+    "email": "safim40318@chainds.com",
+    "fullname": "Bhavishyagn",
+    "password": "123456789",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Rajpura",
+    "pincode": "111111",
+    "job": "designer"
+  },
+  {
+    "email": "bidout2024@gmail.com",
+    "fullname": "Bhavishya g",
+    "password": "123456789",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Rajpura",
+    "pincode": "111111",
+    "job": "manager"
+  },
+  {
+    "email": "deepinder1505@gmail.com",
+    "fullname": "Deepinder",
+    "password": "123456789",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "Bathinda",
+    "pincode": "151001",
+    "job": "manager"
+  },
+  {
+    "email": "abc@abc.com",
+    "fullname": "hush",
+    "password": "12345678",
+    "gender": "male",
+    "state": "Punjab",
+    "city": "near bibi wala road, bathinda",
+    "pincode": "151001",
+    "job": "designer"
+  }
+]

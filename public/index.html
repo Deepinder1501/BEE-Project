@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div class="container">
+        <div class="left-side"></div>
+        <div class="right-side">
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Set Password</label>
+                    <input type="password" id="password" name="password" placeholder="Set a password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+
+                <div class="form-group gender-group">
+                    <label>Gender</label>
+                    <input type="radio" name="gender" value="male" required> Male
+                    <input type="radio" name="gender" value="female" required> Female
+                </div>
+
+                <div class="form-group address-group">
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    </div>
+                    <div>
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" required>
+                    </div>
+                </div>
+
+                <div class="form-group job-group">
+                    <label for="job">Job</label>
+                    <select id="job" name="job" required style="background-color: black;">
+                        <option value="" disabled selected>Select your job</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="manager">Manager</option>
+                        <option value="marketer">Marketer</option>
+                        <option value="sales">Sales</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById("email").value;
+            const fullname = document.getElementById("fullname").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const state = document.getElementById("state").value;
+            const city = document.getElementById("city").value;
+            const pincode = document.getElementById("pincode").value;
+            const job = document.getElementById("job").value;
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            const formData = {
+                email,
+                fullname,
+                password,
+                gender,
+                state,
+                city,
+                pincode,
+                job
+            };
+
+            try {
+                const response = await fetch("/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert("Registration successful!");
+                    document.getElementById("registrationForm").reset();
+                } else {
+                    alert("Error: " + result.message);
+                }
+            } catch (error) {
+                alert("An error occurred: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
